@@ -31,7 +31,7 @@ public class Program
         
         
         /*
-        
+        ==my prev mistake 
         for (int i=0;i<m;i++){
             if(i%2==0){
                 for (int j=0;j<n;j++){
