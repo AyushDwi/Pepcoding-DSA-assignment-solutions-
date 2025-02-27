@@ -18,7 +18,7 @@ public class Program
         int p=0;
         while (n>0){
             rev=n%10;
-            temp+=rev*Math.pow(8,p);
+            temp+=rev*Math.pow(b,p);
             n=n/10;
             p++;
         }
