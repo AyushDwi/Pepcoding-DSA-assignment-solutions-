@@ -43,3 +43,6 @@ public class Program
         
     }
 }
+//mistakes I previously did.
+//didn't reset the carry in the else part.
+//wrote rem1+rem2+c>b instead of >=b.
