@@ -10,7 +10,7 @@ class Solution(object):
         for i in arr:
             ngeor.append(-1)
         top=top+1
-        stack.append(arr[0])
+        stack.append(0)
 
         for i in range(1,len(arr)):
             #if arr[i] is greater than stack[top],pop the elements from the stack coressponding to
@@ -18,21 +18,23 @@ class Solution(object):
             #if arr[i]<stack[top], push arr[i] into stack, and do not update corresponding ngeor
             #if stack is empty, then push arr[i] into stack, and do not update corresponding ngeor
 
-            while top!=-1 and arr[i]>stack[top]:
+            #(UPDATE): stack will store the index of elements corresponding to arr
+        # Earlier I was storing elements in the stack, which led to incorrect result.
+
+            while top!=-1 and arr[i]>arr[stack[top]]:
                 temp=stack[top]
                 del stack[top]
                 top=top-1
-                ngeor[arr.index(temp)]=arr[i]
+                ngeor[temp]=arr[i]
                 
                 
             if top==-1:
                 top=top+1
-                stack.append(arr[i])
+                stack.append(i)
                 
-            elif arr[i]<stack[top]:
-                
+            else:
                 top=top+1
-                stack.append(arr[i])
+                stack.append(i)
                 
 
         return ngeor
